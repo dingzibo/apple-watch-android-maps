@@ -10,6 +10,7 @@ import Network
 import OSLog
 import SwiftUI
 import UserNotifications
+import Darwin
 
 @main
 struct AppleWatchMaps_Watch_AppApp: App {
@@ -404,8 +405,9 @@ final class NavigationNotificationManager: NSObject, ObservableObject {
         if let host = endpointURL(path: "/health")?.host(),
            let prefix = ipv4Prefix(from: host) {
             prefixes.append(prefix)
-            return prefixes
         }
+
+        prefixes.append(contentsOf: localIPv4Prefixes())
 
         prefixes.append(contentsOf: [
             "192.168.0",
@@ -415,6 +417,56 @@ final class NavigationNotificationManager: NSObject, ObservableObject {
         ])
 
         return Array(NSOrderedSet(array: prefixes)) as? [String] ?? prefixes
+    }
+
+    private func localIPv4Prefixes() -> [String] {
+        localIPv4Addresses().compactMap { ipv4Prefix(from: $0) }
+    }
+
+    private func localIPv4Addresses() -> [String] {
+        var interfacePointer: UnsafeMutablePointer<ifaddrs>?
+        guard getifaddrs(&interfacePointer) == 0, let firstInterface = interfacePointer else {
+            return []
+        }
+        defer {
+            freeifaddrs(interfacePointer)
+        }
+
+        var addresses: [String] = []
+        var cursor: UnsafeMutablePointer<ifaddrs>? = firstInterface
+
+        while let interface = cursor {
+            defer {
+                cursor = interface.pointee.ifa_next
+            }
+
+            let flags = Int32(interface.pointee.ifa_flags)
+            guard flags & IFF_UP != 0,
+                  flags & IFF_LOOPBACK == 0,
+                  let address = interface.pointee.ifa_addr,
+                  address.pointee.sa_family == UInt8(AF_INET) else {
+                continue
+            }
+
+            var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+            let result = getnameinfo(
+                address,
+                socklen_t(address.pointee.sa_len),
+                &hostname,
+                socklen_t(hostname.count),
+                nil,
+                0,
+                NI_NUMERICHOST
+            )
+
+            guard result == 0 else {
+                continue
+            }
+
+            addresses.append(String(cString: hostname))
+        }
+
+        return addresses
     }
 
     private func ipv4Prefix(from host: String) -> String? {

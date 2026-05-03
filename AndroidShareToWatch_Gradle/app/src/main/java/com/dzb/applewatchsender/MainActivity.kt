@@ -169,12 +169,15 @@ class MainActivity : Activity() {
         Thread {
             val result = runCatching {
                 val resolvedDestination = resolveDestinationCoordinate(destination)
-                DestinationStore.save(this, resolvedDestination)
+                resolvedDestination to DestinationStore.save(this, resolvedDestination)
             }
 
             runOnUiThread {
                 statusView.text = result.fold(
-                    onSuccess = { "已保存到本机服务\n$it" },
+                    onSuccess = { (resolvedDestination, payload) ->
+                        targetInput.setText(resolvedDestination.name)
+                        "已保存到本机服务\n$payload"
+                    },
                     onFailure = { "保存失败：${it.message ?: it.javaClass.simpleName}" }
                 )
             }
