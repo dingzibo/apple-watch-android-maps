@@ -2,6 +2,8 @@
 
 watchOS app for fetching the latest map destination from an Android phone and opening it in Apple Maps.
 
+中文说明见 [README.zh-CN.md](README.zh-CN.md).
+
 ## Role In The System
 
 This app is the Apple Watch client. It does not host a server and does not require a Mac-side proxy in the main flow.

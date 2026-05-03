@@ -2,6 +2,8 @@
 
 Small Android share receiver for the AppleWatchMaps MVP.
 
+中文说明见 [README.zh-CN.md](README.zh-CN.md).
+
 Flow:
 
 1. Share a location from Amap or another map app.

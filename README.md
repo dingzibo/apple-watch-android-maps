@@ -2,6 +2,8 @@
 
 Send map locations from an Android phone to Apple Watch, then open them in Apple Maps.
 
+中文说明见 [README.zh-CN.md](README.zh-CN.md).
+
 ## Project Structure
 
 ```text
