@@ -192,25 +192,30 @@ class MainActivity : Activity() {
             return destinationFromShortLink
         }
 
-        if (!Geocoder.isPresent()) {
-            return destinationFromShortLink
+        val destinationFromGoogleLink = DestinationParser.resolveGoogleMapsLink(destinationFromShortLink)
+        if (destinationFromGoogleLink.latitude != null && destinationFromGoogleLink.longitude != null) {
+            return destinationFromGoogleLink
         }
 
-        val query = listOfNotNull(destinationFromShortLink.address, destinationFromShortLink.name)
+        if (!Geocoder.isPresent()) {
+            return destinationFromGoogleLink
+        }
+
+        val query = listOfNotNull(destinationFromGoogleLink.address, destinationFromGoogleLink.name)
             .map { it.trim() }
             .filter { it.isNotEmpty() }
             .distinct()
             .joinToString(" ")
 
         if (query.isBlank()) {
-            return destinationFromShortLink
+            return destinationFromGoogleLink
         }
 
         val address = runCatching {
             Geocoder(this, Locale.CHINA).getFromLocationName(query, 1)?.firstOrNull()
-        }.getOrNull() ?: return destinationFromShortLink
+        }.getOrNull() ?: return destinationFromGoogleLink
 
-        return destinationFromShortLink.copy(
+        return destinationFromGoogleLink.copy(
             latitude = address.latitude,
             longitude = address.longitude,
             coordinateSource = "android_geocoder",
@@ -518,6 +523,9 @@ object DestinationParser {
     private val namePattern = Regex("""(?:name|poiname|keywords)=([^&\s]+)""")
     private val hereIsPattern = Regex("""^这里是(.+?)[：:](.+)$""")
     private val urlPattern = Regex("""https?://[^\s，。；、]+""")
+    private val googleAtCoordinatePattern = Regex("""@(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?),""")
+    private val googleBangCoordinatePattern = Regex("""!3d(-?\d+(?:\.\d+)?)!4d(-?\d+(?:\.\d+)?)""")
+    private val googleQueryCoordinatePattern = Regex("""[?&](?:q|query|destination)=(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)""")
 
     fun parse(rawText: String): ParsedDestination {
         val decoded = decode(rawText).replace("\r", "\n")
@@ -596,6 +604,53 @@ object DestinationParser {
         return destination
     }
 
+    fun resolveGoogleMapsLink(destination: ParsedDestination): ParsedDestination {
+        val shareUrl = destination.shareUrl ?: return destination
+        if (!isGoogleMapsUrl(shareUrl)) {
+            return destination
+        }
+
+        var resolvedDestination = parseGoogleMapsPlace(shareUrl)?.mergeInto(destination) ?: destination
+        var currentUrl = shareUrl
+
+        repeat(8) {
+            val connection = runCatching {
+                (URL(currentUrl).openConnection() as HttpURLConnection).apply {
+                    instanceFollowRedirects = false
+                    connectTimeout = 5000
+                    readTimeout = 5000
+                    requestMethod = "GET"
+                    setRequestProperty("User-Agent", "Mozilla/5.0")
+                }
+            }.getOrNull() ?: return resolvedDestination
+
+            val location = runCatching {
+                connection.responseCode
+                connection.getHeaderField("Location")
+            }.getOrNull()
+            connection.disconnect()
+
+            if (location.isNullOrBlank()) {
+                return resolvedDestination
+            }
+
+            val nextUrl = runCatching {
+                URL(URL(currentUrl), location).toString()
+            }.getOrDefault(location)
+
+            parseGoogleMapsPlace(nextUrl)?.let { place ->
+                resolvedDestination = place.mergeInto(resolvedDestination)
+                if (resolvedDestination.latitude != null && resolvedDestination.longitude != null) {
+                    return resolvedDestination
+                }
+            }
+
+            currentUrl = nextUrl
+        }
+
+        return resolvedDestination
+    }
+
     private fun parseAmapCoordinate(text: String): Pair<Double, Double>? {
         val match = positionPattern.find(text) ?: return null
         val first = match.groupValues[1].toDoubleOrNull() ?: return null
@@ -622,6 +677,52 @@ object DestinationParser {
             name = parts.getOrNull(3)?.takeIf { it.isNotBlank() },
             address = parts.getOrNull(4)?.takeIf { it.isNotBlank() }
         )
+    }
+
+    private fun parseGoogleMapsPlace(text: String): GoogleMapsPlace? {
+        val decoded = decode(text).replace("+", " ")
+        val coordinate = parseGoogleCoordinate(decoded)
+        val placeText = parseGooglePlaceText(decoded)
+
+        if (coordinate == null && placeText.isNullOrBlank()) {
+            return null
+        }
+
+        return GoogleMapsPlace(
+            coordinate = coordinate,
+            name = placeText,
+            address = placeText
+        )
+    }
+
+    private fun parseGoogleCoordinate(text: String): Pair<Double, Double>? {
+        listOf(
+            googleAtCoordinatePattern,
+            googleBangCoordinatePattern,
+            googleQueryCoordinatePattern
+        ).forEach { pattern ->
+            val match = pattern.find(text) ?: return@forEach
+            val first = match.groupValues[1].toDoubleOrNull() ?: return@forEach
+            val second = match.groupValues[2].toDoubleOrNull() ?: return@forEach
+            return normalizeCoordinate(first, second)
+        }
+
+        return null
+    }
+
+    private fun parseGooglePlaceText(text: String): String? {
+        val placeSegment = Regex("""/maps/place/([^/?#]+)""")
+            .find(text)
+            ?.groupValues
+            ?.getOrNull(1)
+            ?: return null
+
+        return decode(placeSegment)
+            .replace("+", " ")
+            .replace(Regex("""\s+"""), " ")
+            .replace(Regex("""\s*邮政编码[:：]?\s*\d+"""), "")
+            .trim()
+            .takeIf { it.isNotBlank() }
     }
 
     private fun normalizeCoordinate(first: Double, second: Double): Pair<Double, Double> {
@@ -666,14 +767,16 @@ object DestinationParser {
                 line
                     .replace("#百度地图#", "")
                     .replace("#高德地图#", "")
+                    .replace("#Google地图#", "")
+                    .replace("#Google Maps#", "")
                     .replace("查看详情>>", "")
                     .let { urlPattern.replace(it, "") }
                     .trim()
             }
             .filter { it.isNotBlank() }
             .filterNot { it.startsWith("http://") || it.startsWith("https://") }
-            .filterNot { it.contains("amap.com") || it.contains("map.baidu.com") }
-            .filterNot { it == "百度地图" || it == "高德地图" }
+            .filterNot { it.contains("amap.com") || it.contains("map.baidu.com") || isGoogleMapsUrl(it) }
+            .filterNot { it == "百度地图" || it == "高德地图" || it == "Google地图" || it == "Google Maps" }
             .toList()
     }
 
@@ -687,11 +790,35 @@ object DestinationParser {
         return urlPattern.find(text)?.value?.trim()
     }
 
+    private fun isGoogleMapsUrl(value: String): Boolean {
+        return value.contains("maps.app.goo.gl", ignoreCase = true) ||
+            value.contains("google.com/maps", ignoreCase = true) ||
+            value.contains("goo.gl/maps", ignoreCase = true)
+    }
+
     private data class AmapPlace(
         val coordinate: Pair<Double, Double>?,
         val name: String?,
         val address: String?
     )
+
+    private data class GoogleMapsPlace(
+        val coordinate: Pair<Double, Double>?,
+        val name: String?,
+        val address: String?
+    ) {
+        fun mergeInto(destination: ParsedDestination): ParsedDestination {
+            return destination.copy(
+                name = name?.takeIf { it.isNotBlank() && destination.name == "未命名地点" }
+                    ?: destination.name,
+                address = address?.takeIf { it.isNotBlank() } ?: destination.address,
+                latitude = coordinate?.first ?: destination.latitude,
+                longitude = coordinate?.second ?: destination.longitude,
+                coordinateSource = if (coordinate != null) "google_maps_link" else destination.coordinateSource,
+                coordinateType = if (coordinate != null) "wgs84" else destination.coordinateType
+            )
+        }
+    }
 }
 
 object NetworkUtils {
