@@ -1,0 +1,19 @@
+.DS_Store
+
+# Android Studio / local machine files.
+.idea/
+.idea_old_manual_project/
+*.iml
+local.properties
+
+# Gradle / build outputs.
+.gradle/
+build/
+app/build/
+
+# Generated Android artifacts and local signing material.
+*.apk
+*.ap_
+*.idsig
+*.keystore
+*.jks

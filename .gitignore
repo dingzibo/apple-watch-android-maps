@@ -1,0 +1,29 @@
+.DS_Store
+
+# Old manual Android project kept locally for reference.
+AndroidShareToWatch/
+
+# Backups of the previous standalone git repositories.
+**/.git_backup_before_monorepo/
+
+# Build outputs and local IDE/runtime files.
+**/build/
+**/DerivedData/
+**/.gradle/
+**/.idea/
+**/.idea_old_manual_project/
+**/*.iml
+**/local.properties
+**/*.apk
+**/*.ap_
+**/*.idsig
+**/*.keystore
+**/*.jks
+
+# Xcode user-specific files.
+**/xcuserdata/
+**/*.xcuserstate
+**/*.xcscmblueprint
+
+# Optional local mock server data.
+AppleWatchMaps/server/

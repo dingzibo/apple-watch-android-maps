@@ -1,0 +1,14 @@
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+
+# User-specific Xcode settings.
+xcuserdata/
+*.xcuserdatad/
+AppleWatchMaps.xcodeproj/xcuserdata/
+AppleWatchMaps.xcodeproj/project.xcworkspace/xcuserdata/
+
+# Optional local mock server. The current production flow uses AndroidShareToWatch_Gradle.
+server/

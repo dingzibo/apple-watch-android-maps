@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24C214F82FA4FDA000F8252C /* AppleWatchMaps Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 24C214F72FA4FDA000F8252C /* AppleWatchMaps Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24C214F92FA4FDA000F8252C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24C214EB2FA4FD9F00F8252C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24C214F62FA4FDA000F8252C;
+			remoteInfo = "AppleWatchMaps Watch App";
+		};
+		24C2150A2FA4FDA100F8252C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24C214EB2FA4FD9F00F8252C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24C214F62FA4FDA000F8252C;
+			remoteInfo = "AppleWatchMaps Watch App";
+		};
+		24C215142FA4FDA100F8252C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24C214EB2FA4FD9F00F8252C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24C214F62FA4FDA000F8252C;
+			remoteInfo = "AppleWatchMaps Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		24C215202FA4FDA100F8252C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				24C214F82FA4FDA000F8252C /* AppleWatchMaps Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		24C214F12FA4FDA000F8252C /* AppleWatchMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C214F72FA4FDA000F8252C /* AppleWatchMaps Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleWatchMaps Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C215092FA4FDA100F8252C /* AppleWatchMaps Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AppleWatchMaps Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C215132FA4FDA100F8252C /* AppleWatchMaps Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AppleWatchMaps Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		24C214FB2FA4FDA000F8252C /* AppleWatchMaps Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "AppleWatchMaps Watch App";
+			sourceTree = "<group>";
+		};
+		24C2150C2FA4FDA100F8252C /* AppleWatchMaps Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "AppleWatchMaps Watch AppTests";
+			sourceTree = "<group>";
+		};
+		24C215162FA4FDA100F8252C /* AppleWatchMaps Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "AppleWatchMaps Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24C214F42FA4FDA000F8252C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24C215062FA4FDA100F8252C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24C215102FA4FDA100F8252C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24C214EA2FA4FD9F00F8252C = {
+			isa = PBXGroup;
+			children = (
+				24C214FB2FA4FDA000F8252C /* AppleWatchMaps Watch App */,
+				24C2150C2FA4FDA100F8252C /* AppleWatchMaps Watch AppTests */,
+				24C215162FA4FDA100F8252C /* AppleWatchMaps Watch AppUITests */,
+				24C214F22FA4FDA000F8252C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24C214F22FA4FDA000F8252C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24C214F12FA4FDA000F8252C /* AppleWatchMaps.app */,
+				24C214F72FA4FDA000F8252C /* AppleWatchMaps Watch App.app */,
+				24C215092FA4FDA100F8252C /* AppleWatchMaps Watch AppTests.xctest */,
+				24C215132FA4FDA100F8252C /* AppleWatchMaps Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24C214F02FA4FDA000F8252C /* AppleWatchMaps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24C215212FA4FDA100F8252C /* Build configuration list for PBXNativeTarget "AppleWatchMaps" */;
+			buildPhases = (
+				24C214EF2FA4FDA000F8252C /* Resources */,
+				24C215202FA4FDA100F8252C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24C214FA2FA4FDA000F8252C /* PBXTargetDependency */,
+			);
+			name = AppleWatchMaps;
+			packageProductDependencies = (
+			);
+			productName = AppleWatchMaps;
+			productReference = 24C214F12FA4FDA000F8252C /* AppleWatchMaps.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		24C214F62FA4FDA000F8252C /* AppleWatchMaps Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24C2151D2FA4FDA100F8252C /* Build configuration list for PBXNativeTarget "AppleWatchMaps Watch App" */;
+			buildPhases = (
+				24C214F32FA4FDA000F8252C /* Sources */,
+				24C214F42FA4FDA000F8252C /* Frameworks */,
+				24C214F52FA4FDA000F8252C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				24C214FB2FA4FDA000F8252C /* AppleWatchMaps Watch App */,
+			);
+			name = "AppleWatchMaps Watch App";
+			packageProductDependencies = (
+			);
+			productName = "AppleWatchMaps Watch App";
+			productReference = 24C214F72FA4FDA000F8252C /* AppleWatchMaps Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24C215082FA4FDA100F8252C /* AppleWatchMaps Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24C215242FA4FDA100F8252C /* Build configuration list for PBXNativeTarget "AppleWatchMaps Watch AppTests" */;
+			buildPhases = (
+				24C215052FA4FDA100F8252C /* Sources */,
+				24C215062FA4FDA100F8252C /* Frameworks */,
+				24C215072FA4FDA100F8252C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24C2150B2FA4FDA100F8252C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				24C2150C2FA4FDA100F8252C /* AppleWatchMaps Watch AppTests */,
+			);
+			name = "AppleWatchMaps Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "AppleWatchMaps Watch AppTests";
+			productReference = 24C215092FA4FDA100F8252C /* AppleWatchMaps Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		24C215122FA4FDA100F8252C /* AppleWatchMaps Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24C215272FA4FDA100F8252C /* Build configuration list for PBXNativeTarget "AppleWatchMaps Watch AppUITests" */;
+			buildPhases = (
+				24C2150F2FA4FDA100F8252C /* Sources */,
+				24C215102FA4FDA100F8252C /* Frameworks */,
+				24C215112FA4FDA100F8252C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24C215152FA4FDA100F8252C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				24C215162FA4FDA100F8252C /* AppleWatchMaps Watch AppUITests */,
+			);
+			name = "AppleWatchMaps Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "AppleWatchMaps Watch AppUITests";
+			productReference = 24C215132FA4FDA100F8252C /* AppleWatchMaps Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24C214EB2FA4FD9F00F8252C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					24C214F02FA4FDA000F8252C = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					24C214F62FA4FDA000F8252C = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					24C215082FA4FDA100F8252C = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 24C214F62FA4FDA000F8252C;
+					};
+					24C215122FA4FDA100F8252C = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 24C214F62FA4FDA000F8252C;
+					};
+				};
+			};
+			buildConfigurationList = 24C214EE2FA4FD9F00F8252C /* Build configuration list for PBXProject "AppleWatchMaps" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24C214EA2FA4FD9F00F8252C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 24C214F22FA4FDA000F8252C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24C214F02FA4FDA000F8252C /* AppleWatchMaps */,
+				24C214F62FA4FDA000F8252C /* AppleWatchMaps Watch App */,
+				24C215082FA4FDA100F8252C /* AppleWatchMaps Watch AppTests */,
+				24C215122FA4FDA100F8252C /* AppleWatchMaps Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24C214EF2FA4FDA000F8252C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24C214F52FA4FDA000F8252C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24C215072FA4FDA100F8252C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24C215112FA4FDA100F8252C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24C214F32FA4FDA000F8252C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24C215052FA4FDA100F8252C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24C2150F2FA4FDA100F8252C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24C214FA2FA4FDA000F8252C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24C214F62FA4FDA000F8252C /* AppleWatchMaps Watch App */;
+			targetProxy = 24C214F92FA4FDA000F8252C /* PBXContainerItemProxy */;
+		};
+		24C2150B2FA4FDA100F8252C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24C214F62FA4FDA000F8252C /* AppleWatchMaps Watch App */;
+			targetProxy = 24C2150A2FA4FDA100F8252C /* PBXContainerItemProxy */;
+		};
+		24C215152FA4FDA100F8252C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24C214F62FA4FDA000F8252C /* AppleWatchMaps Watch App */;
+			targetProxy = 24C215142FA4FDA100F8252C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		24C2151B2FA4FDA100F8252C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		24C2151C2FA4FDA100F8252C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		24C2151E2FA4FDA100F8252C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AppleWatchMaps Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 93PGC966KC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WatchAppInfo.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzb.AppleWatchMaps.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		24C2151F2FA4FDA100F8252C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AppleWatchMaps Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 93PGC966KC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WatchAppInfo.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzb.AppleWatchMaps.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		24C215222FA4FDA100F8252C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93PGC966KC;
+				INFOPLIST_KEY_CFBundleDisplayName = AppleWatchMaps;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzb.AppleWatchMaps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		24C215232FA4FDA100F8252C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93PGC966KC;
+				INFOPLIST_KEY_CFBundleDisplayName = AppleWatchMaps;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzb.AppleWatchMaps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24C215252FA4FDA100F8252C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dzb.AppleWatchMaps-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleWatchMaps Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppleWatchMaps Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		24C215262FA4FDA100F8252C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dzb.AppleWatchMaps-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleWatchMaps Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppleWatchMaps Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		24C215282FA4FDA100F8252C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dzb.AppleWatchMaps-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "AppleWatchMaps Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		24C215292FA4FDA100F8252C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dzb.AppleWatchMaps-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "AppleWatchMaps Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24C214EE2FA4FD9F00F8252C /* Build configuration list for PBXProject "AppleWatchMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24C2151B2FA4FDA100F8252C /* Debug */,
+				24C2151C2FA4FDA100F8252C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24C2151D2FA4FDA100F8252C /* Build configuration list for PBXNativeTarget "AppleWatchMaps Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24C2151E2FA4FDA100F8252C /* Debug */,
+				24C2151F2FA4FDA100F8252C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24C215212FA4FDA100F8252C /* Build configuration list for PBXNativeTarget "AppleWatchMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24C215222FA4FDA100F8252C /* Debug */,
+				24C215232FA4FDA100F8252C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24C215242FA4FDA100F8252C /* Build configuration list for PBXNativeTarget "AppleWatchMaps Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24C215252FA4FDA100F8252C /* Debug */,
+				24C215262FA4FDA100F8252C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24C215272FA4FDA100F8252C /* Build configuration list for PBXNativeTarget "AppleWatchMaps Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24C215282FA4FDA100F8252C /* Debug */,
+				24C215292FA4FDA100F8252C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24C214EB2FA4FD9F00F8252C /* Project object */;
+}
